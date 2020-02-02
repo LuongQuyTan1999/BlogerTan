@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+// import { compose } from "redux";
+import { withStyles } from "@material-ui/core";
+import styles from "./styles";
+import ContainerTop from "./components/ContainerTop";
+import ContainerBody from "./components/ContainerBody";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+function App(props) {
+    const { classes } = props;
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className={classes.App}>
+            <Header />
+            <ContainerTop />
+            <ContainerBody />
+            <Footer />
+        </div>
+    );
 }
 
-export default App;
+export default withStyles(styles)(App);
